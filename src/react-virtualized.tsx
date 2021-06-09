@@ -1,4 +1,4 @@
-import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import React, { CSSProperties, useState, useEffect, useRef } from "react";
 const DefaultStyle: CSSProperties = {
   position: "absolute",
 };
@@ -7,7 +7,7 @@ interface IProps {
   height: number;
   itemCount: number;
   itemSize: number | ((index: number) => number);
-  reRenderItem: number;
+  reRenderCount: number;
   renderItem: (params: { index: number; style: CSSProperties }) => JSX.Element;
 }
 const ReactVirtualized: React.FC<IProps> = (props) => {
@@ -70,7 +70,7 @@ const ReactVirtualized: React.FC<IProps> = (props) => {
   }, [listEleRef.current]);
   useEffect(() => {
     calculateItemsTop();
-  }, [props.reRenderItem]);
+  }, [props.reRenderCount]);
   return (
     <div
       ref={listEleRef}
