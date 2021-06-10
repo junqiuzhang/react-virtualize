@@ -1,9 +1,18 @@
 # react-virtualize
+
 [中文文档](https://github.com/junqiuzhang/react-virtualize/blob/master/README_zh-CN.md)
 
 react-virtualize is a virtual rendering library like react-window.
 
+## Feature
+
+1. react-virtualize is more lightweight, only 100 lines of code, 2 KB in size.
+2. react-virtualize has better performance, javascript execution time when scrolling is only 20% of react-window
+3. react-virtualize is written using hooks, full support for functional programming and typescript
+
 ## Install
+
+Note: not react-virtualized
 
 ```
 # Yarn

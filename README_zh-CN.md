@@ -2,7 +2,15 @@
 
 react-virtualize 是一个虚拟化渲染的库，类似于 react-window
 
+## 特性
+
+1. react-virtualize 更轻量，共 100 行代码，体积仅有 2 KB
+2. react-virtualize 性能更好，滚动时 javascript 执行时间仅为 react-window 的 20%
+3. react-virtualize 使用 hooks 编写，全面支持函数式编程
+
 ## 安装
+
+注意：是 react-virtualize 不是 react-virtualized
 
 ```
 # Yarn
