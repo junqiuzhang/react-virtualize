@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, ReactNode } from "react";
 const DefaultStyle: React.CSSProperties = {
   position: "absolute",
 };
@@ -25,7 +25,7 @@ interface IProps {
   renderItem: (params: {
     index: number;
     style: React.CSSProperties;
-  }) => JSX.Element;
+  }) => ReactNode;
   /**
    * re-render count, if your change list item‘s height, you must change this value
    */

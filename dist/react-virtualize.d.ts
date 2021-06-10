@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 interface IProps {
     /**
      * width of list
@@ -22,7 +22,7 @@ interface IProps {
     renderItem: (params: {
         index: number;
         style: React.CSSProperties;
-    }) => JSX.Element;
+    }) => ReactNode;
     /**
      * re-render count, if your change list item‘s height, you must change this value
      */
