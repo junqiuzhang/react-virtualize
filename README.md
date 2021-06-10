@@ -1,7 +1,7 @@
-# react-virtualized
+# react-virtualize
 [中文文档](https://github.com/junqiuzhang/react-virtualize/blob/master/README_zh-CN.md)
 
-react-virtualized is a virtual rendering library like react-window.
+react-virtualize is a virtual rendering library like react-window.
 
 ## Install
 
@@ -15,7 +15,12 @@ npm install --save react-virtualize
 
 ## Usage
 
-Usage is similar to react-window, but it is lighter.
+Usage is similar to react-window, there are some differentia:
+
+1. react-virtualize only support virtualize list, not support virtualize table.
+2. react-virtualize use renderItem function to render list items.
+3. react-virtualize use reRenderCount to determine if list updates are needed.
+4. react-virtualize use preRenderPageCount to control the number of pre-rendered pages.
 
 ### example
 
@@ -30,7 +35,7 @@ import List from "react-virtualize";
     return 100;
   }}
   reRenderCount={1} // if your change list item‘s height, you must change this value
-  preRenderPageNumber={1} // number of pre-rendered pages, the larger the number, the more list items will be pre-rendered
+  preRenderPageCount={1} // number of pre-rendered pages, the larger the number, the more list items will be pre-rendered
   renderItem={({ index, style }) => {
     // used to render list items
     const data = props.dataSource[index];
@@ -49,7 +54,7 @@ interface IProps {
   itemSize: number | ((index: number) => number);
   renderItem: (params: { index: number; style: CSSProperties }) => JSX.Element;
   reRenderCount?: number;
-  preRenderPageNumber?: number;
+  preRenderPageCount?: number;
 }
 ```
 

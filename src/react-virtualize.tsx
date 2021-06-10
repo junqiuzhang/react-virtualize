@@ -7,8 +7,9 @@ interface IProps {
   height: number;
   itemCount: number;
   itemSize: number | ((index: number) => number);
-  reRenderCount: number;
   renderItem: (params: { index: number; style: CSSProperties }) => JSX.Element;
+  reRenderCount?: number;
+  preRenderPageCount?: number;
 }
 const ReactVirtualized: React.FC<IProps> = (props) => {
   const [reRender, setReRender] = useState<number>(0);
@@ -17,7 +18,7 @@ const ReactVirtualized: React.FC<IProps> = (props) => {
   const listTop = useRef<number>(0);
   const throttleDiff = props.height;
   const renderItems = () => {
-    const itemCount = props.itemCount || 0;
+    const itemCount = props.itemCount ?? 0;
     const items = [];
     if (!listEleRef.current) {
       return [];
@@ -25,17 +26,20 @@ const ReactVirtualized: React.FC<IProps> = (props) => {
     if (!props.renderItem) {
       return [];
     }
+    const pageBottom =
+      listEleRef.current.scrollTop +
+      (1 + (props.preRenderPageCount ?? 1)) * props.height;
+    const pageTop =
+      listEleRef.current.scrollTop -
+      (props.preRenderPageCount ?? 1) * props.height;
     for (let i = 0; i < itemCount; i++) {
-      const currentTop = itemsTopRef.current[i];
-      const currentHeight = itemsTopRef.current[i + 1] - itemsTopRef.current[i];
-      if (
-        currentTop < listEleRef.current.scrollTop + 2 * props.height &&
-        currentTop + currentHeight > listEleRef.current.scrollTop - props.height
-      ) {
+      const curTop = itemsTopRef.current[i];
+      const curBottom = itemsTopRef.current[i + 1];
+      if (curTop < pageBottom && curBottom > pageTop) {
         items.push(
           props.renderItem({
             index: i,
-            style: { ...DefaultStyle, top: `${currentTop}px` },
+            style: { ...DefaultStyle, top: `${curTop}px` },
           })
         );
       }
@@ -43,7 +47,7 @@ const ReactVirtualized: React.FC<IProps> = (props) => {
     return items;
   };
   const calculateItemsTop = () => {
-    const itemCount = props.itemCount || 0;
+    const itemCount = props.itemCount ?? 0;
     const items = [0];
     let top = 0;
     for (let i = 0; i < itemCount; i++) {

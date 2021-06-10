@@ -1,20 +1,20 @@
 {
   "name": "react-virtualize",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "react virtualized render",
   "files": [
     "dist"
   ],
-  "main": "./dist/react-virtualized.umd.js",
-  "module": "./dist/react-virtualized.es.js",
+  "main": "./dist/react-virtualize.umd.js",
+  "module": "./dist/react-virtualize.es.js",
   "exports": {
     ".": {
-      "import": "./dist/react-virtualized.es.js",
-      "require": "./dist/react-virtualized.umd.js"
+      "import": "./dist/react-virtualize.es.js",
+      "require": "./dist/react-virtualize.umd.js"
     }
   },
   "type": "module",
-  "types": "./dist/react-virtualized.d.ts",
+  "types": "./dist/react-virtualize.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -34,7 +34,7 @@
     "react",
     "reactjs",
     "virtual",
-    "virtualized",
+    "virtualize",
     "list",
     "scrolling"
   ],
