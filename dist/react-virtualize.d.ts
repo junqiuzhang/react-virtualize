@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 interface IProps {
     width: number;
     height: number;
@@ -6,7 +6,7 @@ interface IProps {
     itemSize: number | ((index: number) => number);
     renderItem: (params: {
         index: number;
-        style: CSSProperties;
+        style: React.CSSProperties;
     }) => JSX.Element;
     reRenderCount?: number;
     preRenderPageCount?: number;

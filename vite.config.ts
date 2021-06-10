@@ -6,8 +6,8 @@ import vitePluginReact from 'vite-plugin-react'
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/react-virtualized.tsx"),
-      name: "react-virtualized",
+      entry: path.resolve(__dirname, "src/react-virtualize.tsx"),
+      name: "react-virtualize",
     },
     rollupOptions: {
       // 请确保外部化那些你的库中不需要的依赖
