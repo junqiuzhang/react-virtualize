@@ -36,9 +36,9 @@ import List from "react-virtualize";
 <List
   height={400}
   width={600}
-  itemCount={props.dataSource.length} // 用于遍历列表，通常是数据源长度，可传数字或函数
+  itemCount={props.dataSource.length} // 用于遍历列表，通常是列表长度
   itemSize={(index) => {
-    // 用于获取列表项高度，可传数字或函数
+    // 用于控制列表项高度，可传数字或函数
     return 100;
   }}
   reRenderCount={1} // 重新渲染的标记，内部会监听这个标记，如果标记改变，那么会重新渲染列表，所以如果列表项高度改变，那么必须改变这个值

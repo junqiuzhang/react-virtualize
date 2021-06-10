@@ -38,15 +38,15 @@ import List from "react-virtualize";
 <List
   height={400}
   width={600}
-  itemCount={props.dataSource.length} // Used to traverse a list, usually the length of the data source, numbers or functions can be passed
+  itemCount={props.dataSource.length} // used to traverse a list, usually the length of the list, numbers
   itemSize={(index) => {
-    // used to get the height of a list item, numbers or functions can be passed
+    // used to control the height of a list item, numbers or functions can be passed
     return 100;
   }}
-  reRenderCount={1} // if your change list item‘s height, you must change this value
-  preRenderPageCount={1} // number of pre-rendered pages, the larger the number, the more list items will be pre-rendered
+  reRenderCount={1} // re-render count, if your change list item‘s height, you must change this value
+  preRenderPageCount={1} // pre-rendered pages count, the larger the number, the more list items will be pre-rendered
   renderItem={({ index, style }) => {
-    // used to render list items
+    // used to render list item, the style should be passed to item
     const data = props.dataSource[index];
     return <div style={style}>{data}</div>;
   }}
