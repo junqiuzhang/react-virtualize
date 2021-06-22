@@ -44,7 +44,7 @@
     "vite": "^2.3.7",
     "vite-plugin-react": "^4.0.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   }
 }
