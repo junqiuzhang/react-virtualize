@@ -1,6 +1,6 @@
 {
   "name": "react-virtualize",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "react virtualized render",
   "files": [
     "dist"
