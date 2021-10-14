@@ -31,7 +31,7 @@ Usage is similar to react-window, there are some differentia:
 3. react-virtualize use reRenderCount to determine if list updates are needed.
 4. react-virtualize use preRenderPageCount to control the number of pre-rendered pages.
 
-### example
+### Example
 
 ```tsx
 import List from "react-virtualize";
@@ -53,7 +53,7 @@ import List from "react-virtualize";
 />;
 ```
 
-### interface
+### Interface
 
 ```ts
 interface IProps {
