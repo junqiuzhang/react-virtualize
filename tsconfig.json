@@ -4,11 +4,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["es5", "dom"],
+    "lib": ["esnext", "dom"],
     "types": ["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"]
