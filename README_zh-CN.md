@@ -67,4 +67,4 @@ interface IProps {
 
 ## 开源协议
 
-ISC
+MIT

@@ -69,4 +69,4 @@ interface IProps {
 
 ## License
 
-ISC
+MIT
